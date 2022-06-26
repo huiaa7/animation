@@ -1,0 +1,32 @@
+$bgColor:#03A9F4;  //背景色
+$textSize: 25px;  //字体大小
+$textColor: #fff;  //字体颜色
+$bgAnimationColor: #ffaa00;  //背景动画背景
+$broderColor: #fff;  //边框颜色
+$otherBgColor: rgb(139, 230, 103);
+
+@mixin border($color) {
+  border: 4px solid $color;
+}
+
+@mixin commonBg {
+  width: 250px;
+  height: 150px;
+  background-color: $bgColor;
+  color: $textColor;
+  text-align: center;
+  line-height: 150px;
+  font-size: 25px;
+  border-radius: 20px;
+  @include border(#fff);
+  margin: 10px 20px 20px 10px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  user-select: none;  //文本不能被选择
+}
+
+@mixin allTransition($time) {
+  transition: all $time;
+}
