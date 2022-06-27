@@ -40,12 +40,16 @@ const routes = [
     children: [
       {
         path: "cordelle",
-        component: () => import("../components/Other/pulling.vue"),
+        component: () => import("@/components/Other/pulling.vue"),
       },
       {
-        path: "aaa",
-        component: () => import("@/views/ClickOnTheAnimation/index.vue"),
+        path: "bgbulles",
+        component: () => import("@/components/Other/bgbulles.vue"),
       },
+      // {
+      //   path: "bgbulles",
+      //   component: () => import("@/components/Other/bgbulles.vue"),
+      // },
     ],
   },
   {

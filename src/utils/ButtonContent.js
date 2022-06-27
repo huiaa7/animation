@@ -8,16 +8,7 @@ const datas = {
 
 const others = {
   拖拽排序: "/other/cordelle",
-  拖拽排1序: "/other/cordelle",
-  拖拽排2序: "/other/cordelle",
-  拖拽排3序: "/other/cordelle",
-  拖拽排4序: "/other/cordelle",
-  拖拽排5序: "/other/cordelle",
-  拖拽排6序: "/other/cordelle",
-  拖拽排7序: "/other/cordelle",
-  拖拽排8序: "/other/cordelle",
-  拖拽排9序: "/other/cordelle",
-  拖拽排11序: "/other/cordelle",
+  气泡背景: "/other/bgbulles",
 };
 
 export { datas, others };
