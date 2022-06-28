@@ -1,9 +1,12 @@
+
 $bgColor:#03A9F4;  //背景色
 $textSize: 25px;  //字体大小
 $textColor: #fff;  //字体颜色
 $bgAnimationColor: #ffaa00;  //背景动画背景
 $broderColor: #fff;  //边框颜色
 $otherBgColor: rgb(139, 230, 103);
+
+
 
 @mixin border($color) {
   border: 4px solid $color;

@@ -1,13 +1,19 @@
 <template>
   <div id="bubbles">
     <ul class="bg-bubbles">
-      <li v-for="item in 10" :key="item" class="bubble"></li>
+      <li v-for="item in number" :key="item" class="bubble"></li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data () {
+    return {
+      number: 13
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
 #bubbles {
@@ -23,13 +29,13 @@ export default {};
     height: 100%;
     overflow: hidden;
 
-    @for $i from 0 through 10 {
+    @for $i from 0 through 13 {
       .bubble:nth-child(#{$i}) {
         position: absolute;
         bottom: -160px;
         left: #{random(100)} + "%";
         $width: random(100) + px;
-        $len: round(random() * 10) / 10;
+        $len: round(random() * 10)*0.1;
         width: $width;
         height: $width;
         background-color: rgba(255, 255, 255, $len);
