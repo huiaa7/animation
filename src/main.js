@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import "./assets/stylesheet/base.scss";
-
+import "./utils/delegate";
 Vue.config.productionTip = false;
 
 new Vue({

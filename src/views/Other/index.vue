@@ -10,9 +10,13 @@
         {{ item }}
       </div>
     </div>
+    
     <div class="viewContent">
-      <router-view></router-view>
+      <transition name="bounce">
+        <router-view></router-view>
+      </transition>
     </div>
+    
   </div>
 </template>
 
@@ -79,6 +83,40 @@ export default {
     width: calc(100% - 300px);
     height: 100%;
     left: 300px;
+
+    //切换动画
+    .bounce-enter-to,.bounce-leave-to,.bounce-enter,.bounce-leave{
+      opacity: 0;
+    }
+    .bounce-enter-active {
+      animation: bounce-on 1s 0.5s;
+    }
+    .bounce-leave-active {
+      animation: bounce-in 0.5s;
+    }
+    //离开
+    @keyframes bounce-in {
+      0% {
+        transform: rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(360deg);
+        opacity: 0;
+      }
+    }
+    //进入
+    @keyframes bounce-on {
+      0% {
+        transform:scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
   }
 }
+
 </style>
