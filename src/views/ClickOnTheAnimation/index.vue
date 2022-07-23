@@ -1,7 +1,9 @@
 <template>
   <div id="clickOnTheAnimation">
     <div class="clickItem">
-      <div class="bgBtn bubles" @click="pop">点击泡泡</div>
+      <div class="bgBtn bubles" v-throttle="{ time: 200, fn: pop }">
+        点击泡泡
+      </div>
     </div>
   </div>
 </template>

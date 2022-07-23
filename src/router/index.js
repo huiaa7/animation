@@ -46,10 +46,10 @@ const routes = [
         path: "bgbulles",
         component: () => import("@/components/Other/bgbulles.vue"),
       },
-      // {
-      //   path: "bgbulles",
-      //   component: () => import("@/components/Other/bgbulles.vue"),
-      // },
+      {
+        path: "headlles",
+        component: () => import("@/components/Other/headlles.vue"),
+      },
     ],
   },
   {

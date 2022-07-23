@@ -1,20 +1,16 @@
 <template>
-  <div id="Text">
-    <h1>测试页面</h1>
-    <div class="content">
-      <el-upload
-        class="avatar-uploader"
-        action="http://localhost:3000/api/upload"
-        :data="this.avatarForm"
-        :show-file-list="false"
-        :on-success="handleAvatarSuccess"
-        :before-upload="beforeAvatarUpload"
-        :on-error="handleAvatarError"
-      >
-        <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-        <i v-else class="el-icon-plus avatar-uploader-icon">点击头像上传</i>
-      </el-upload>
-    </div>
+  <div id="headlles">
+    <el-upload
+      class="avatar-uploader"
+      action="http://localhost:3000/api/upload"
+      :data="this.avatarForm"
+      :show-file-list="false"
+      :on-success="handleAvatarSuccess"
+      :before-upload="beforeAvatarUpload"
+    >
+      <img v-if="imageUrl" :src="imageUrl" class="avatar" />
+      <i v-else class="el-icon-plus avatar-uploader-icon">点击头像上传</i>
+    </el-upload>
   </div>
 </template>
 
@@ -38,7 +34,6 @@ export default {
   methods: {
     handleAvatarSuccess(res) {
       if (res.status === "1") return this.$message.error(res.message);
-      console.log(res.srcult);
       this.imageUrl = `http://localhost:3000/public/${res.srcult}`;
       this.$message.success("修改头像成功");
     },
@@ -54,12 +49,8 @@ export default {
         this.$message.error("上传的图片大小不能超过2MB");
       }
       return (isJPG || isPNG) && isLt2M;
-    },
-    handleAvatarError(err) {
-      console.log(err);
     }
   },
-
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
@@ -81,35 +72,24 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-#Text {
-  width: 100%;
-  height: 100%;
-  background-color: $bgAnimationColor;
-  h1 {
+#headlles {
+  .avatar-uploader {
+    width: 400px;
+    height: 200px;
+    display: block;
+    background-color: rgb(216, 217, 217);
     text-align: center;
-    font-size: 25px;
-    color: $textColor;
-  }
-  .content {
-    width: 100%;
-    height: calc(100vh - 37px);
-    background-color: antiquewhite;
-    display: flex;
-    flex-direction: column;
-
-    .avatar-uploader {
-      width: 200px;
+    ::v-deep .el-upload {
+      box-sizing: border-box;
+      width: 400px;
       height: 200px;
-      display: block;
-      background-color: rgb(216, 217, 217);
-      text-align: center;
-      ::v-deep .el-upload {
-        box-sizing: border-box;
-        width: 200px;
+      // border: 1px dashed $bgColor;
+      line-height: 200px;
+      color: $bgColor;
+      & > img {
+        width: 400px;
         height: 200px;
-        border: 1px dashed $bgColor;
-        line-height: 200px;
-        color: $bgColor;
+        overflow: hidden;
       }
     }
   }
