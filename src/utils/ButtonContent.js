@@ -10,6 +10,7 @@ const others = {
   拖拽排序: "/other/cordelle",
   气泡背景: "/other/bgbulles",
   上传图片: "/other/headlles",
+  文字流星: "/other/shahab",
 };
 
 export { datas, others };
