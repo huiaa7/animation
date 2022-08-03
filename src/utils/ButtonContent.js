@@ -11,6 +11,7 @@ const others = {
   气泡背景: "/other/bgbulles",
   上传图片: "/other/headlles",
   文字流星: "/other/shahab",
+  FLIP原理动画: "/other/flip",
 };
 
 export { datas, others };

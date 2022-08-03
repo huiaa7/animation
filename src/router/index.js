@@ -54,6 +54,10 @@ const routes = [
         path: "shahab",
         component: () => import("@/components/Other/shahab.vue"),
       },
+      {
+        path: "flip",
+        component: () => import("@/components/Other/flip.vue"),
+      },
     ],
   },
   {

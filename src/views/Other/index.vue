@@ -10,13 +10,12 @@
         {{ item }}
       </div>
     </div>
-    
+
     <div class="viewContent">
       <transition name="bounce">
         <router-view></router-view>
       </transition>
     </div>
-    
   </div>
 </template>
 
@@ -65,11 +64,33 @@ export default {
   display: flex;
   .otherItem {
     width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
     background-color: antiquewhite;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    /* 设置滚动条的轨道 */
+    &::-webkit-scrollbar-track {
+      background: #ededed;
+      border-radius: 2px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    /* 设置滚动条里面的小方块 */
+    &::-webkit-scrollbar-thumb {
+      background-color: skyblue;
+      border-radius: 10px;
+      background-image: -webkit-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+      );
+    }
 
     .bgbtn {
       @include commonBg;
@@ -83,9 +104,13 @@ export default {
     width: calc(100% - 300px);
     height: 100%;
     left: 300px;
+    overflow: hidden;
 
     //切换动画
-    .bounce-enter-to,.bounce-leave-to,.bounce-enter,.bounce-leave{
+    .bounce-enter-to,
+    .bounce-leave-to,
+    .bounce-enter,
+    .bounce-leave {
       opacity: 0;
     }
     .bounce-enter-active {
@@ -108,7 +133,7 @@ export default {
     //进入
     @keyframes bounce-on {
       0% {
-        transform:scale(0);
+        transform: scale(0);
         opacity: 0;
       }
       100% {
@@ -118,5 +143,4 @@ export default {
     }
   }
 }
-
 </style>
