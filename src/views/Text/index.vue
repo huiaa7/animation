@@ -12,7 +12,7 @@
         :on-error="handleAvatarError"
       >
         <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-        <i v-else class="el-icon-plus avatar-uploader-icon">修改</i>
+        <i v-else class="el-icon-plus avatar-uploader-icon">修改师德师风</i>
       </el-upload>
     </div>
   </div>
